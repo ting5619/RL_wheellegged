@@ -2,9 +2,9 @@
 
 面向 RoboMaster 轮腿机器人的运动控制强化学习工程，使用 **Isaac Lab + Isaac Sim**。当前以华南理工 Wheelbipe V14.2 建立物理模型基线，复旦工程继续作为控制与训练设计参考。目标使用本体状态，不配置相机或视觉算法。
 
-实际工程位于 `/mnt/data/RL_wheellegged`；Git 远端为 <https://github.com/ting5619/RL_wheellegged>。
+项目代码与公开文档保存在本仓库，运行路径由各自的检出位置决定。
 
-最终目标是自研轮腿机器人的真机部署。腿部连杆、弹簧、电机数量及位置与华南理工方案基本一致；已选 DM8009P，用户提供额定扭矩 20 N·m、峰值扭矩 40 N·m，其余硬件参数待定。机械装配与建模定型前，使用华南理工方案验证算法及训练—导出—跨仿真—部署链路；自研模型定型后重新辨识、训练和验收。分阶段安排见 [项目规划 PLAN.md](PLAN.md)。
+最终目标是自研轮腿机器人的真机部署。自研机械与执行器参数按最终装配和实测结果配置。机械装配与建模定型前，使用华南理工方案验证算法及训练—导出—跨仿真—部署链路；自研模型定型后重新辨识、训练和验收。分阶段安排见 [项目规划 PLAN.md](PLAN.md)。
 
 ## 参考资料与来源声明
 
@@ -12,13 +12,13 @@
 
 | 来源 | 在本工程中的用途与当前采用情况 |
 | --- | --- |
-| [复旦大学轮腿 RL：fudan_rl_wheel_leg](https://github.com/yly-true/fudan_rl_wheel_leg) | 用户指定的主要算法与轮腿控制参考；本轮未移植其 Isaac Gym 训练入口或策略 |
+| [复旦大学轮腿 RL：fudan_rl_wheel_leg](https://github.com/yly-true/fudan_rl_wheel_leg) | 主要算法与轮腿控制参考；本轮未移植其 Isaac Gym 训练入口或策略 |
 | [华南理工：wheeled-legged_RL](https://github.com/scutrobotlab/wheeled-legged_RL) | 当前直接采用的 SCUT V14.2 USD、基础资产配置、任务代码和 13k ONNX；任务源码按固定版本加载 |
 | [华南理工：wheelbipe_ros2_sim2sim](https://github.com/scutrobotlab/wheelbipe_ros2_sim2sim) | 配套 ROS 2 / MuJoCo sim2sim 与 sim2real 部署参考；已核对同一 ONNX，部署链路尚未验收 |
 | [XYEGA RM2026 WheelLeg RLdeploy](https://github.com/chushanxiaodaoshi/XYEGA_RM2026_WheelLeg_Infatry_RLdeploy) | 次要部署实现参考，未接入运行链路 |
-| [MuJiCa](https://hyzenthlayer.github.io/mujica/) | 用户提供的后续研究参考，当前运行不依赖该项目 |
-| [arXiv:2605.13058](https://arxiv.org/pdf/2605.13058) | 用户提供的论文参考，待进一步评审，当前不据此声明算法复现 |
-| [ATRos 轮腿混合运动](https://baoziweiyuebing.github.io/ATRos-Wheeled_legged-robot-hybrid-locomotion/) | 用户提供的后续研究参考，当前运行不依赖该项目 |
+| [MuJiCa](https://hyzenthlayer.github.io/mujica/) | 后续研究参考，当前运行不依赖该项目 |
+| [arXiv:2605.13058](https://arxiv.org/pdf/2605.13058) | 论文参考，待进一步评审，当前不据此声明算法复现 |
+| [ATRos 轮腿混合运动](https://baoziweiyuebing.github.io/ATRos-Wheeled_legged-robot-hybrid-locomotion/) | 后续研究参考，当前运行不依赖该项目 |
 
 SCUT 训练/任务源码固定于 [`b8ff79f`](https://github.com/scutrobotlab/wheeled-legged_RL/tree/b8ff79f3df855faf9dc92f4a282bd80c42649466)，部署参考固定于 [`dd367bf`](https://github.com/scutrobotlab/wheelbipe_ros2_sim2sim/tree/dd367bf78c7e393d811595edeb4affe253156c95)。完整来源与版本见 [参考清单](docs/references.md)；移植资产和策略的逐文件 SHA-256 分别见 [模型来源](source/rl_wheellegged/assets/wheelbipe_v14_2/provenance.json)及[策略来源](source/rl_wheellegged/policies/scut_flat_13k/provenance.json)。
 
@@ -36,10 +36,10 @@ SCUT 采用内容保留 `Copyright (c) 2026 SCUTRobotLab` 与 [上游 MIT 许可
 
 ## 快速运行
 
-本机环境已经安装，无需重复下载。
+先按 [环境文档](docs/environment.md) 准备依赖，再在仓库根目录执行以下命令；已有环境无需重复安装。
 
 ```bash
-cd /mnt/data/RL_wheellegged
+# 在本仓库根目录执行
 source env.sh
 
 # RL 策略：站立→0.3 m/s 前进→0.3 rad/s 转向→停止，每段 5 秒
@@ -78,7 +78,7 @@ python scripts/sim_robot.py --device cuda:0 --fixed_base --steps 4000
 | RSL-RL | 3.0.1 |
 | ONNX Runtime（CPU 推理） | 1.20.1 |
 
-本机为 Ubuntu 24.04、32 GB 内存、RTX 4060 Laptop 8 GB，使用已有驱动。8 GB 用于无视觉、小批量物理基线已有实测；后续训练仍需根据模型、地形和并行数量测量。Isaac Sim 5.1 官方配置要求见[系统要求](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/requirements.html)。
+本工程已完成无视觉、小批量物理与策略接入检查；实际显存和训练吞吐需按目标硬件、模型、地形和并行数量测量。Isaac Sim 5.1 官方配置要求见[系统要求](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/requirements.html)。
 
 新机器安装方法见 [docs/environment.md](docs/environment.md)。依赖已有 Isaac 环境时可用 `python -m pip install --no-deps -e .` 安装本项目；脚本也支持从仓库直接运行。
 

@@ -35,3 +35,6 @@ dist/
 *.pem
 *.key
 .vscode/
+
+# Private local notes; never publish
+/READ.md

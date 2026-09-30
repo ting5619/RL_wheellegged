@@ -1,4 +1,4 @@
-# Source this file: source /mnt/data/RL_wheellegged/env.sh
+# From the repository root: source env.sh
 export RL_PROJECT_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 export ISAACLAB_PATH="$RL_PROJECT_ROOT/src/IsaacLab"
 export UV_CACHE_DIR="$RL_PROJECT_ROOT/cache/uv"

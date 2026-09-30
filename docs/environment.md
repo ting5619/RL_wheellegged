@@ -1,6 +1,6 @@
 # 环境与复现
 
-本机已完成环境安装，优先直接 `source /mnt/data/RL_wheellegged/env.sh` 使用。所有环境、源码依赖、缓存、临时文件和日志保存在项目数据盘目录，Git 只保存工程、模型与可复现配置。
+已有环境可在仓库根目录执行 `source env.sh`；新环境按下文配置。环境、源码依赖、缓存、临时文件和日志均按项目相对目录组织，Git 只保存工程、模型与可复现配置。
 
 ## 固定版本
 
@@ -10,7 +10,7 @@ Python 3.11，Isaac Sim 5.1.0，Isaac Lab v2.3.0（`3c6e67bb5c7ada942a6d1884ab69
 
 ## 新检出目录的准备步骤
 
-以下是新环境复现说明，不需要在已有安装上重做。先准备 Linux x86_64 的 `uv` 命令和兼容 NVIDIA 驱动，`uv` 安装方法见[官方文档](https://docs.astral.sh/uv/getting-started/installation/)。本机的 uv 位于 `tools/uv-x86_64-unknown-linux-gnu/uv`。
+以下是新环境复现说明，不需要在已有安装上重做。先准备 Linux x86_64 的 `uv` 命令和兼容 NVIDIA 驱动，`uv` 安装方法见[官方文档](https://docs.astral.sh/uv/getting-started/installation/)。按本项目约定，uv 位于 `tools/uv-x86_64-unknown-linux-gnu/uv`。
 
 在检出的项目根目录运行：
 
