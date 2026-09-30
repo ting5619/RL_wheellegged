@@ -1,0 +1,68 @@
+{
+  "recorded_at": "2026-09-30T08:42:16.725081+00:00",
+  "robot_source_commit": "b8ff79f3df855faf9dc92f4a282bd80c42649466",
+  "source_script_sha256": "a55be3feafa47bbca2ebd82b6894408fad4c5d22c837ab141ecaaa494344c8aa",
+  "validation_scope": "2-second physics and actuator smoke checks; no RL policy, balance or sim2real validation.",
+  "body_count": 37,
+  "articulation_joint_count": 36,
+  "loop_constraints": 6,
+  "mass_kg": 23.30158805847168,
+  "runs": [
+    {
+      "report_file": "logs/robot-free-1.json",
+      "report_sha256": "d4f360cf5c57acc53929511e3925a22fb069045ad5b815ee9bd54278daaf86c0",
+      "log_file": "logs/robot-free-1-attempt3.log",
+      "log_sha256": "337ec745ddb6cf36e64109643a5f757be83936cd019cb847648b0ebc6e476f47",
+      "test": "free_base_contact",
+      "status": "PASS",
+      "num_envs": 1,
+      "steps": 400,
+      "dt": 0.005,
+      "device": "cuda:0",
+      "root_height_range_m": [
+        0.1718878149986267,
+        0.3799999952316284
+      ],
+      "min_peak_contact_force_N": 5651.67138671875,
+      "gpu_memory_used_total_MiB_at_end_including_other_processes": "2464, 8188"
+    },
+    {
+      "report_file": "logs/robot-free-16.json",
+      "report_sha256": "b3a016de4c86a233b49c6f7cbde514aa3ced3c2f46b2d1414945106d25db47c3",
+      "log_file": "logs/robot-free-16.log",
+      "log_sha256": "03c021fbe1275c1c7147426b4fee7b72e0f2e5f918eeec6c2869b5e3dc7a867f",
+      "test": "free_base_contact",
+      "status": "PASS",
+      "num_envs": 16,
+      "steps": 400,
+      "dt": 0.005,
+      "device": "cuda:0",
+      "root_height_range_m": [
+        0.17274773120880127,
+        0.3799999952316284
+      ],
+      "min_peak_contact_force_N": 5669.3037109375,
+      "gpu_memory_used_total_MiB_at_end_including_other_processes": "2464, 8188"
+    },
+    {
+      "report_file": "logs/robot-fixed-1.json",
+      "report_sha256": "529a633623d61655a0cc5a5e659af4719c3149e2961aeba64b67d9a8cfa609ae",
+      "log_file": "logs/robot-fixed-1.log",
+      "log_sha256": "5dcd720e36662d667d69092647dc082a74f6b4ce70f19e2e66cdaa66c56d6d53",
+      "test": "fixed_base_actuation",
+      "status": "PASS",
+      "num_envs": 1,
+      "steps": 400,
+      "dt": 0.005,
+      "device": "cuda:0",
+      "root_height_range_m": [
+        1.0,
+        1.0
+      ],
+      "min_peak_contact_force_N": 0.0,
+      "gpu_memory_used_total_MiB_at_end_including_other_processes": "2306, 8188"
+    }
+  ],
+  "packaging": "Editable install, isolated wheel build, 6 USD assets and both licenses verified; pip check passed.",
+  "initial_failed_attempts": "Initial dependency checks stopped at Kit built-in OmniPBR.mdl. Audit now verifies the bundled file and rejects all other unresolved dependencies. Raw attempt logs retained locally."
+}

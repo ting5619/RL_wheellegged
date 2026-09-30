@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1", "packaging==24.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rl-wheellegged"
+version = "0.1.0"
+description = "RoboMaster wheel-legged robot simulation with Isaac Lab"
+requires-python = ">=3.11,<3.12"
+license = "MIT"
+license-files = ["LICENSE", "licenses/*.txt"]
+
+[tool.setuptools.packages.find]
+where = ["source"]
+
+[tool.setuptools.package-data]
+rl_wheellegged = ["assets/**/*.usd", "assets/**/*.json"]

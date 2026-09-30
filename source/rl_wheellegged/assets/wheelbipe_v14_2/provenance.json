@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/scutrobotlab/wheeled-legged_RL",
+  "commit": "b8ff79f3df855faf9dc92f4a282bd80c42649466",
+  "license": "MIT; see licenses/SCUTRobotLab-MIT.txt",
+  "source_directory": "source/agent_world/agent_world/assets/usd_files/wheelbipeV14_2_1",
+  "asset_changes": "None; all six USD files are copied byte-for-byte.",
+  "config_source": "source/agent_world/agent_world/assets/wheelbipe_V14_2.py",
+  "config_source_sha256": "fc5b24a73f2251d0ac977dfaa8bfb55d7074e3ca9ce6477cf0cdabd3a118f521",
+  "config_changes": "Only base Wheelbipe_V14_2_CFG retained; local asset path; optional custom-actuator variants and unused imports omitted; base actuator and physics parameters preserved.",
+  "files": {
+    "configuration/wheelbipeV14_2_base.usd": "45ccc5c85bf42501c4b941cbbceaa5b15dd93d687c7ad0c71c06222cab1f7d1f",
+    "configuration/wheelbipeV14_2_physics.usd": "9707bbcc49dca2809a865e720494f9a021e82a096322c7930e35ea14604d39eb",
+    "configuration/wheelbipeV14_2_robot.usd": "395e70f43277c9cf7aaac55560358ada05739d6c94a8d983af46faac55948f16",
+    "configuration/wheelbipeV14_2_sensor.usd": "635b8c6924aa7e1ae5fc1b3452b50fc3ff6691d3d00332143e3f06ef19b4d466",
+    "wheelbipeV14_2.usd": "48f2d53ac589391a37f3df550e8e537af3ecb5bdb6ebb632fb8c7b83fa9af325",
+    "wheelbipeV14_2_ng.usd": "6df973ffa0e7a640ea551ec77951bc9d5da5d2cfa5380f20cdb70a7dc0647f82"
+  }
+}

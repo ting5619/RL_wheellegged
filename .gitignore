@@ -1,0 +1,37 @@
+# Local environments, dependencies, caches, reference checkouts and evidence
+/envs/
+/cache/
+/tools/
+/downloads/
+/runtime/
+/tmp/
+/work/
+/logs/
+/checkpoints/
+/outputs/
+/references/
+/src/IsaacLab/
+/assets/isaac-5.1/
+/docs/references/
+/docs/cpu.txt
+/docs/gpu.csv
+/docs/os-release.txt
+/docs/source-manifest.json
+/docs/requirements-frozen.txt
+/docs/environment-status.md
+/docs/isaaclab-commit.txt
+# Python and build output
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+# Credentials and local editor settings
+.env
+.env.*
+*.pem
+*.key
+.vscode/
