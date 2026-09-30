@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "source_commit": "b8ff79f3df855faf9dc92f4a282bd80c42649466",
+  "policy_sha256": "a1244761f7ede02f8c80d076d4315a25f014df43df3f7f0d20c2ca5bcd518719",
+  "seed": 42,
+  "num_envs": 1,
+  "scenario": "sequence",
+  "segment_seconds": 5.0,
+  "policy_hz": 50,
+  "physics_hz": 200,
+  "task_class": "WheelbipeV14FlatEnvCfg_Play",
+  "actor_inputs": 35,
+  "actions": 6,
+  "overrides": [
+    "fixed command schedule and 0.22m target",
+    "no special command modes",
+    "zero gimbal yaw target",
+    "interval external pushes disabled",
+    "local USD",
+    "debug markers disabled",
+    "episode timeout extended"
+  ],
+  "retained": [
+    "task spring forces",
+    "upstream sensor noise and delays",
+    "upstream actuator delays",
+    "upstream startup/reset randomization",
+    "leg torque cap 40Nm; wheel torque cap 5Nm"
+  ],
+  "scope": "Reference ONNX integration trial; not a reproduction of the historical training run or hardware validation.",
+  "action_order": [
+    "left_front1_joint",
+    "left_rear1_joint",
+    "right_front1_joint",
+    "right_rear1_joint",
+    "left_wheel_joint",
+    "right_wheel_joint"
+  ],
+  "joint_indices": [
+    6,
+    8,
+    15,
+    17,
+    28,
+    32
+  ],
+  "body_mass_kg": [
+    23.423147201538086
+  ],
+  "control_steps": 1000,
+  "physics_steps": 4000,
+  "completed_state_samples": 1000,
+  "terminations": 0,
+  "timeouts": 0,
+  "inference_batch_p99_ms": 0.10252135230985003,
+  "metrics_after_1s_each_phase": [
+    {
+      "env_id": 0,
+      "phase": "stand",
+      "samples": 200,
+      "vx_rmse_m_s": 0.053618556025987925,
+      "wz_rmse_rad_s": 0.04350282953580983,
+      "height_rmse_m": 0.006441719863512911,
+      "max_abs_roll_pitch_rad": 0.02895665168762207
+    },
+    {
+      "env_id": 0,
+      "phase": "forward",
+      "samples": 200,
+      "vx_rmse_m_s": 0.04947701078708458,
+      "wz_rmse_rad_s": 0.05820344336693953,
+      "height_rmse_m": 0.004899832434314875,
+      "max_abs_roll_pitch_rad": 0.02715015411376953
+    },
+    {
+      "env_id": 0,
+      "phase": "turn",
+      "samples": 200,
+      "vx_rmse_m_s": 0.058434258385316996,
+      "wz_rmse_rad_s": 0.09562846062287973,
+      "height_rmse_m": 0.00590172202564532,
+      "max_abs_roll_pitch_rad": 0.044384002685546875
+    },
+    {
+      "env_id": 0,
+      "phase": "stop",
+      "samples": 200,
+      "vx_rmse_m_s": 0.0516359895558285,
+      "wz_rmse_rad_s": 0.05118337231982929,
+      "height_rmse_m": 0.005758420768162682,
+      "max_abs_roll_pitch_rad": 0.030840635299682617
+    }
+  ],
+  "tracking_within_initial_targets": true,
+  "leg_torque_peak_sampled_Nm": [
+    40.0,
+    40.0,
+    16.484153747558594,
+    22.542287826538086
+  ],
+  "leg_over_20Nm_fraction_sampled": [
+    0.003,
+    0.003,
+    0.0,
+    0.001
+  ],
+  "torque_sampling_note": "End of each 20ms policy step only; not 5ms peak or thermal validation."
+}

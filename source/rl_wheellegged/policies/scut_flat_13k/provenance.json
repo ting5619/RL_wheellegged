@@ -1,0 +1,38 @@
+{
+  "repository": "https://github.com/scutrobotlab/wheeled-legged_RL",
+  "commit": "b8ff79f3df855faf9dc92f4a282bd80c42649466",
+  "checkpoint": "pretrained/26_infantry/flat_and_rotation/2026-07-19_09-14-50/exported/2026-07-19_09-14-50_13k.onnx",
+  "license": "MIT; licenses/SCUTRobotLab-MIT.txt",
+  "files": {
+    "policy.onnx": "a1244761f7ede02f8c80d076d4315a25f014df43df3f7f0d20c2ca5bcd518719",
+    "training_agent.yaml": "2a612b5acd7a0551d04f266770c73fd2b05a20d22cff8b9e25dffaf0b105c28f",
+    "training_env.yaml": "0cf26151bdfbc649674fe0467f636a532b59b15a253f68aba00ea31a96f5ca3a"
+  },
+  "input": {
+    "name": "obs",
+    "dtype": "float32",
+    "shape": [
+      1,
+      35
+    ]
+  },
+  "output": {
+    "name": "actions",
+    "dtype": "float32",
+    "shape": [
+      1,
+      6
+    ]
+  },
+  "policy_hz": 50,
+  "leg_action_scale_rad": 0.5,
+  "wheel_action_scale_rad_s": 10.0,
+  "action_order": [
+    "left_front1_joint",
+    "left_rear1_joint",
+    "right_front1_joint",
+    "right_rear1_joint",
+    "left_wheel_joint",
+    "right_wheel_joint"
+  ]
+}

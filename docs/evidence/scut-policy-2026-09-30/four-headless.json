@@ -1,0 +1,219 @@
+{
+  "status": "PASS",
+  "source_commit": "b8ff79f3df855faf9dc92f4a282bd80c42649466",
+  "policy_sha256": "a1244761f7ede02f8c80d076d4315a25f014df43df3f7f0d20c2ca5bcd518719",
+  "seed": 43,
+  "num_envs": 4,
+  "scenario": "sequence",
+  "segment_seconds": 5.0,
+  "policy_hz": 50,
+  "physics_hz": 200,
+  "task_class": "WheelbipeV14FlatEnvCfg_Play",
+  "actor_inputs": 35,
+  "actions": 6,
+  "overrides": [
+    "fixed command schedule and 0.22m target",
+    "no special command modes",
+    "zero gimbal yaw target",
+    "interval external pushes disabled",
+    "local USD",
+    "debug markers disabled",
+    "episode timeout extended"
+  ],
+  "retained": [
+    "task spring forces",
+    "upstream sensor noise and delays",
+    "upstream actuator delays",
+    "upstream startup/reset randomization",
+    "leg torque cap 40Nm; wheel torque cap 5Nm"
+  ],
+  "scope": "Reference ONNX integration trial; not a reproduction of the historical training run or hardware validation.",
+  "action_order": [
+    "left_front1_joint",
+    "left_rear1_joint",
+    "right_front1_joint",
+    "right_rear1_joint",
+    "left_wheel_joint",
+    "right_wheel_joint"
+  ],
+  "joint_indices": [
+    6,
+    8,
+    15,
+    17,
+    28,
+    32
+  ],
+  "body_mass_kg": [
+    27.683765411376953,
+    22.695283889770508,
+    22.547143936157227,
+    25.828201293945312
+  ],
+  "control_steps": 1000,
+  "physics_steps": 4000,
+  "completed_state_samples": 4000,
+  "terminations": 0,
+  "timeouts": 0,
+  "inference_batch_p99_ms": 0.17058858000382315,
+  "metrics_after_1s_each_phase": [
+    {
+      "env_id": 0,
+      "phase": "stand",
+      "samples": 200,
+      "vx_rmse_m_s": 0.060056164730782666,
+      "wz_rmse_rad_s": 0.04335937114616344,
+      "height_rmse_m": 0.005627602192536292,
+      "max_abs_roll_pitch_rad": 0.05658364295959473
+    },
+    {
+      "env_id": 0,
+      "phase": "forward",
+      "samples": 200,
+      "vx_rmse_m_s": 0.05559098586139497,
+      "wz_rmse_rad_s": 0.04901953224923222,
+      "height_rmse_m": 0.004947945155084739,
+      "max_abs_roll_pitch_rad": 0.04827880859375
+    },
+    {
+      "env_id": 0,
+      "phase": "turn",
+      "samples": 200,
+      "vx_rmse_m_s": 0.05727143978869798,
+      "wz_rmse_rad_s": 0.08604757387965922,
+      "height_rmse_m": 0.004746557537467568,
+      "max_abs_roll_pitch_rad": 0.03945612907409668
+    },
+    {
+      "env_id": 0,
+      "phase": "stop",
+      "samples": 200,
+      "vx_rmse_m_s": 0.059696869432262524,
+      "wz_rmse_rad_s": 0.04807203165155132,
+      "height_rmse_m": 0.0047216327351140685,
+      "max_abs_roll_pitch_rad": 0.05037951469421387
+    },
+    {
+      "env_id": 1,
+      "phase": "stand",
+      "samples": 200,
+      "vx_rmse_m_s": 0.08655100176051164,
+      "wz_rmse_rad_s": 0.07528412667406645,
+      "height_rmse_m": 0.0080760265732606,
+      "max_abs_roll_pitch_rad": 0.06793022155761719
+    },
+    {
+      "env_id": 1,
+      "phase": "forward",
+      "samples": 200,
+      "vx_rmse_m_s": 0.04606260785365059,
+      "wz_rmse_rad_s": 0.09180521674546009,
+      "height_rmse_m": 0.007411370820475616,
+      "max_abs_roll_pitch_rad": 0.036002397537231445
+    },
+    {
+      "env_id": 1,
+      "phase": "turn",
+      "samples": 200,
+      "vx_rmse_m_s": 0.05470391723192491,
+      "wz_rmse_rad_s": 0.11703377993177815,
+      "height_rmse_m": 0.007810135943543715,
+      "max_abs_roll_pitch_rad": 0.040889739990234375
+    },
+    {
+      "env_id": 1,
+      "phase": "stop",
+      "samples": 200,
+      "vx_rmse_m_s": 0.07527765778485788,
+      "wz_rmse_rad_s": 0.07318137452427481,
+      "height_rmse_m": 0.007687748137458501,
+      "max_abs_roll_pitch_rad": 0.04887747764587402
+    },
+    {
+      "env_id": 2,
+      "phase": "stand",
+      "samples": 200,
+      "vx_rmse_m_s": 0.055321161447968344,
+      "wz_rmse_rad_s": 0.04984735459949505,
+      "height_rmse_m": 0.0069335304530616535,
+      "max_abs_roll_pitch_rad": 0.04336833953857422
+    },
+    {
+      "env_id": 2,
+      "phase": "forward",
+      "samples": 200,
+      "vx_rmse_m_s": 0.05231080624438354,
+      "wz_rmse_rad_s": 0.04882528682738148,
+      "height_rmse_m": 0.006532663176886725,
+      "max_abs_roll_pitch_rad": 0.04098868370056152
+    },
+    {
+      "env_id": 2,
+      "phase": "turn",
+      "samples": 200,
+      "vx_rmse_m_s": 0.06334673857222624,
+      "wz_rmse_rad_s": 0.09002247856526699,
+      "height_rmse_m": 0.006959310105757589,
+      "max_abs_roll_pitch_rad": 0.038646697998046875
+    },
+    {
+      "env_id": 2,
+      "phase": "stop",
+      "samples": 200,
+      "vx_rmse_m_s": 0.06871428622991296,
+      "wz_rmse_rad_s": 0.048101298312430915,
+      "height_rmse_m": 0.007188252731500988,
+      "max_abs_roll_pitch_rad": 0.03725790977478027
+    },
+    {
+      "env_id": 3,
+      "phase": "stand",
+      "samples": 200,
+      "vx_rmse_m_s": 0.050380818144966304,
+      "wz_rmse_rad_s": 0.04202091844757776,
+      "height_rmse_m": 0.00402428004744521,
+      "max_abs_roll_pitch_rad": 0.06898617744445801
+    },
+    {
+      "env_id": 3,
+      "phase": "forward",
+      "samples": 200,
+      "vx_rmse_m_s": 0.06788343128118972,
+      "wz_rmse_rad_s": 0.04276696696313074,
+      "height_rmse_m": 0.004335099633728155,
+      "max_abs_roll_pitch_rad": 0.06455111503601074
+    },
+    {
+      "env_id": 3,
+      "phase": "turn",
+      "samples": 200,
+      "vx_rmse_m_s": 0.03764794501288079,
+      "wz_rmse_rad_s": 0.11832227659310145,
+      "height_rmse_m": 0.003941674517451386,
+      "max_abs_roll_pitch_rad": 0.05456972122192383
+    },
+    {
+      "env_id": 3,
+      "phase": "stop",
+      "samples": 200,
+      "vx_rmse_m_s": 0.051145269821592225,
+      "wz_rmse_rad_s": 0.038579336822447394,
+      "height_rmse_m": 0.0037754905973639407,
+      "max_abs_roll_pitch_rad": 0.06954765319824219
+    }
+  ],
+  "tracking_within_initial_targets": true,
+  "leg_torque_peak_sampled_Nm": [
+    40.0,
+    40.0,
+    40.0,
+    40.0
+  ],
+  "leg_over_20Nm_fraction_sampled": [
+    0.00625,
+    0.00475,
+    0.005,
+    0.0045
+  ],
+  "torque_sampling_note": "End of each 20ms policy step only; not 5ms peak or thermal validation."
+}

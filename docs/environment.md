@@ -29,7 +29,7 @@ source env.sh
 python -m pip install --no-deps -e .
 ```
 
-安装脚本会校验 Isaac Lab 提交、安装约束版本、执行 `pip check` 并记录环境冻结清单。下载需联网；Isaac 许可接受通过 `env.sh` 的 `OMNI_KIT_ACCEPT_EULA=YES` 配置，使用者需阅读并接受相应许可。本项目使用独立的构建环境及 `packaging==24.2` 解析许可证元数据，不升级 Isaac 运行环境中受约束的 `packaging==23.0`。完整参考仓库不是运行本地模型的依赖。
+安装脚本会校验 Isaac Lab 提交、安装约束版本、执行 `pip check` 并记录环境冻结清单。下载需联网；Isaac 许可接受通过 `env.sh` 的 `OMNI_KIT_ACCEPT_EULA=YES` 配置，使用者需阅读并接受相应许可。本项目使用独立的构建环境及 `packaging==24.2` 解析许可证元数据，不升级 Isaac 运行环境中受约束的 `packaging==23.0`。完整参考仓库不是 `sim_robot.py` 物理基线的依赖；`play_scut_policy.py` 需要固定版本的 SCUT 任务源码，准备方法见 [策略接入记录](policy-integration.md)。
 
 ## 验收
 

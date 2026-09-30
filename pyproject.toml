@@ -14,4 +14,4 @@ license-files = ["LICENSE", "licenses/*.txt"]
 where = ["source"]
 
 [tool.setuptools.package-data]
-rl_wheellegged = ["assets/**/*.usd", "assets/**/*.json"]
+rl_wheellegged = ["assets/**/*.usd", "assets/**/*.json", "policies/**/*.onnx", "policies/**/*.json", "policies/**/*.yaml"]
